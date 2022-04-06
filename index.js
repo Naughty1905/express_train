@@ -4,7 +4,7 @@ const path = require('path');
 
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
-        res.writeHead(200,{
+        res.writeHead(200, {
             'Content-Type': 'text/html; charset=utf-8',
         })
         if (req.url === '/') {
@@ -19,8 +19,27 @@ const server = http.createServer((req, res) => {
                 res.end(file);
             })
         }
+        if (req.url === '/api/users') {
+            res.writeHead(200, {
+                'Content-Type': 'text/json'
+            });
+
+            const users = [{
+                'name': 'Ivan',
+                'age': 25,
+                'color': 'ginger'
+            },
+                {
+                    'name': 'Ericson',
+                    'age': 35,
+                    'color': 'brown'
+                }
+            ];
+
+            res.end(JSON.stringify(users));
+        }
     } else if (req.method === 'POST') {
-        res.writeHead(200,{
+        res.writeHead(200, {
             'Content-Type': 'text/html; charset=utf-8',
         })
         const body = [];
