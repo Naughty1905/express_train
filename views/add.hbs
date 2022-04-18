@@ -1,0 +1,22 @@
+<h1>Add product</h1>
+
+<form action="/add" method="post">
+    <div class="input-field">
+        <input type="text" name="name" id="product-name" class="validate" required>
+        <label for="product-name">Название продукта</label>
+        <span class="helper-text" data-error="Введите название продукта"></span>
+    </div>
+    <div class="input-field">
+        <input type="number" name="price" id="product-price" class="validate" required>
+        <label for="product-price">Цена продукта</label>
+        <span class="helper-text" data-error="Введите цену продукта"></span>
+    </div>
+    <div class="input-field">
+        <input type="text" name="image" id="product-img" class="validate" required>
+        <label for="product-img">URL изображения</label>
+        <span class="helper-text" data-error="Введите ссылку на изображение"></span>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+        Добавить продукт
+    </button>
+</form>

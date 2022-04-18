@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
             })
         }
         if (req.url === '/about') {
-            fs.readFile(path.join(__dirname, 'views', 'about.hbs'), 'utf-8', (err, file) => {
+            fs.readFile(path.join(__dirname, 'views', 'products.hbs'), 'utf-8', (err, file) => {
                 if (err) throw err;
                 res.end(file);
             })
